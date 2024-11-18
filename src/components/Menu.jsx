@@ -1,23 +1,23 @@
 import { useState } from "react";
 import { Search } from "../icons/Search";
 import Dados from "./Dados";
-import { getWeather } from "../config/api"; // Função que faz a requisição para a API
+import { getWeather } from "../config/api"; 
 
 export default function Menu() {
-  const [city, setCity] = useState(""); // Armazena o nome da cidade
-  const [weatherData, setWeatherData] = useState(null); // Armazena os dados do clima
-  const [loading, setLoading] = useState(false); // Estado para controle de carregamento
+  const [city, setCity] = useState(""); 
+  const [weatherData, setWeatherData] = useState(null); 
+  const [loading, setLoading] = useState(false); 
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    setLoading(true); // Inicia o carregamento
+    setLoading(true);
     try {
-      const data = await getWeather(city); // Obtém os dados do clima
-      setWeatherData(data); // Atualiza o estado com os dados recebidos
+      const data = await getWeather(city); 
+      setWeatherData(data);
     } catch (error) {
       console.error("Erro ao buscar o clima:", error);
     } finally {
-      setLoading(false); // Finaliza o carregamento
+      setLoading(false); 
     }
   };
 
@@ -36,7 +36,7 @@ export default function Menu() {
             placeholder="Digite o nome da cidade"
             className="flex-1 border-none outline-none text-gray-700 placeholder-gray-400 p-2 rounded-md focus:ring-2 focus:ring-blue-500"
             value={city}
-            onChange={(e) => setCity(e.target.value)} // Atualiza o valor da cidade
+            onChange={(e) => setCity(e.target.value)} 
           />
           <button
             type="submit"

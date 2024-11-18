@@ -4,7 +4,7 @@ import { Pin } from "../icons/Pin";
 import { Wind } from "../icons/Wind";
 
 export default function Dados({ weather }) {
-  const { name, main, weather: weatherDescription, wind } = weather; // Desestrutura os dados da resposta
+  const { name, main, weather: weatherDescription, wind } = weather;
 
   return (
     <div className="mt-8 p-6 bg-white rounded-lg shadow-lg max-w-md mx-auto">
